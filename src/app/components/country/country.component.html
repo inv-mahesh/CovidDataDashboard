@@ -1,0 +1,37 @@
+<h3>Countries</h3>
+<mat-paginator [length]="countries.length" [pageSize]="pageSize" [pageIndex]="page" [pageSizeOptions]="[30]"
+    (page)="getData($event)">
+</mat-paginator>
+<mat-grid-list cols="3" rowHeight="250px" gutterSize="15px">
+    <mat-grid-tile *ngFor="let country of data">
+        <mat-card class="my-card">
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image">
+                    <img style="width: 50%;" src="{{country.countryInfo.flag}}" alt="Flag">
+                </div>
+                <mat-card-title>{{country.country}}</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <mat-grid-list cols="2" rowHeight="50px" gutterSize="5px">
+                    <mat-grid-tile class="my-content">
+                        <p>Cases</p><br/>
+                        <p>{{country.cases}}</p></mat-grid-tile>
+                    <mat-grid-tile class="my-content"><p>Deaths</p>
+                        <p>{{country.deaths}}</p></mat-grid-tile>
+                    <mat-grid-tile class="my-content"><p>Recovered</p>
+                        <p>{{country.recovered}}</p></mat-grid-tile>
+                    <mat-grid-tile class="my-content"><p>Tests</p>
+                        <p>{{country.tests}}</p></mat-grid-tile>
+                    <mat-grid-tile class="my-content"><p>Population</p>
+                        <p>{{country.population}}</p></mat-grid-tile>
+                    <mat-grid-tile class="my-content">
+
+                    </mat-grid-tile>
+                  </mat-grid-list>
+            </mat-card-content>
+            <mat-card-actions>
+                
+            </mat-card-actions>
+        </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>
