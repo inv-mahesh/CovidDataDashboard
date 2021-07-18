@@ -15,7 +15,7 @@ mat-sidenav {
 }
 
 .content {
-    height: calc(100vh - 98px);
+    height: 100%;
     border-radius: 10px;
     margin: 16px;
     margin-left: 32px;
@@ -69,6 +69,9 @@ mat-divider {
 }
 .active {
     border-left: 5px solid rgb(15, 219, 94);
-    // background-color: black !important;
     color: #ffffff !important;
+}
+.bottom{
+    position: absolute;
+  bottom: 0;
 }

@@ -1,5 +1,8 @@
-<h3>Countries</h3>
-<mat-paginator [length]="countries.length" [pageSize]="pageSize" [pageIndex]="page" [pageSizeOptions]="[30]"
+<div class="container">
+    <div class="text mat-typography"><h1>Countries</h1></div>
+    <div class="line"><mat-divider></mat-divider></div>
+  </div>
+        <mat-paginator [length]="countries.length" [pageSize]="pageSize" [pageIndex]="page" [pageSizeOptions]="[30]"
     (page)="getData($event)">
 </mat-paginator>
 <mat-grid-list cols="3" rowHeight="250px" gutterSize="15px">
@@ -12,21 +15,46 @@
                 <mat-card-title>{{country.country}}</mat-card-title>
             </mat-card-header>
             <mat-card-content>
-                <mat-grid-list cols="2" rowHeight="50px" gutterSize="5px">
-                    <mat-grid-tile class="my-content">
-                        <p>Cases</p><br/>
-                        <p>{{country.cases}}</p></mat-grid-tile>
-                    <mat-grid-tile class="my-content"><p>Deaths</p>
-                        <p>{{country.deaths}}</p></mat-grid-tile>
-                    <mat-grid-tile class="my-content"><p>Recovered</p>
-                        <p>{{country.recovered}}</p></mat-grid-tile>
-                    <mat-grid-tile class="my-content"><p>Tests</p>
-                        <p>{{country.tests}}</p></mat-grid-tile>
-                    <mat-grid-tile class="my-content"><p>Population</p>
-                        <p>{{country.population}}</p></mat-grid-tile>
-                    <mat-grid-tile class="my-content">
-
-                    </mat-grid-tile>
+                <mat-grid-list cols="3" rowHeight="50px" gutterSize="5px">
+                    <mat-grid-list cols="3" rowHeight="1:1">
+                        <mat-grid-tile>
+                            <div>
+                                <p>Cases</p>
+                        <p>{{country.cases}}</p>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div>
+                                <p>Deaths</p>
+                        <p>{{country.deaths}}</p>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div>
+                                <p>Recovered</p>
+                                <p>{{country.recovered}}</p>   
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div>
+                                <p>Tests</p>
+                        <p>{{country.tests}}</p>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div>
+                                <p>Population</p>
+                        <p>{{country.population}}</p>
+                            </div>
+                        </mat-grid-tile>
+                        <mat-grid-tile>
+                            <div>
+                                <button mat-button class="menu-button" [routerLink]="'/country-edit'" >
+                                    <mat-icon>edit</mat-icon>
+                                </button>
+                            </div>
+                        </mat-grid-tile>
+                      </mat-grid-list>
                   </mat-grid-list>
             </mat-card-content>
             <mat-card-actions>

@@ -25,11 +25,12 @@
         </button>
 
         <mat-divider></mat-divider>
-
-        <button mat-button class="menu-button">
+       <div class="bottom">
+        <button mat-button class="menu-button" (click)="logout()">
             <mat-icon>logout</mat-icon>
             <span>Logout</span>
         </button>
+       </div>
 
     </mat-sidenav>
     <mat-sidenav-content>

@@ -1,57 +1,62 @@
 <div class="grid-container">
-  <h3 class="mat-h3">Total</h3>
+  <div class="container">
+    <div class="text mat-typography"><h1>Total</h1></div>
+    <div class="line"><mat-divider></mat-divider></div>
+  </div>
   <mat-grid-list cols="3" rowHeight="200px" gutterSize="15px">
     <mat-grid-tile>
       <mat-card class="my-card">
-        <mat-card-content class="my-content">
-          <p>Total Cases</p>
+          <div class="my-content">
+            <p>Total Cases</p><br>
           <p>{{case.cases}}</p>
-       </mat-card-content>
+          </div>
+       <!-- </mat-card-content> -->
       </mat-card> 
     </mat-grid-tile>
     <mat-grid-tile>
       <mat-card class="my-card">
-        <mat-card-content class="my-content">
-          <p>Total Deaths</p>
+        <div class="my-content">
+          <p>Total Deaths</p><br>
           <p>{{case.deaths}}</p>
-       </mat-card-content>
+        </div>
       </mat-card> 
     </mat-grid-tile>
     <mat-grid-tile>
       <mat-card class="my-card">
-        <mat-card-content class="my-content">
-          <p>Total Recovered</p>
+        <div class="my-content">
+          <p>Total Recovered</p><br>
           <p>{{case.recovered}}</p>
-       </mat-card-content>
+        </div>
       </mat-card> 
     </mat-grid-tile>
   </mat-grid-list> 
-<!-- </div>
-<div class="grid-container"> -->
-  <h3 class="mat-h3">Today</h3>
+  <div class="container">
+    <div class="text mat-typography"><h1>Today</h1></div>
+    <div class="line"><mat-divider></mat-divider></div>
+  </div>
 <mat-grid-list cols="3" rowHeight="200px" gutterSize="15px">
   <mat-grid-tile>
     <mat-card class="my-card">
-      <mat-card-content style="padding:1em;">
-         <p>Cases</p>
+      <div class="my-content">
+         <p>Cases</p><br>
          <p>{{case.todayCases}}</p>
-      </mat-card-content>
+      </div>>
     </mat-card> 
   </mat-grid-tile>
   <mat-grid-tile>
     <mat-card class="my-card">
-      <mat-card-content class="my-content">
-        <p>Deaths</p>
+      <div class="my-content">
+        <p>Deaths</p><br>
         <p>{{case.todayDeaths}}</p>
-     </mat-card-content>
+     </div>
     </mat-card> 
   </mat-grid-tile>
   <mat-grid-tile>
     <mat-card class="my-card">
-      <mat-card-content class="my-content">
-        <p>Recovered</p>
+      <div class="my-content">
+        <p>Recovered</p><br>
         <p>{{case.todayRecovered}}</p>
-     </mat-card-content>
+      </div>
     </mat-card> 
   </mat-grid-tile>
 </mat-grid-list> 

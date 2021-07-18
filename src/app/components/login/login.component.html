@@ -1,1 +1,31 @@
-<p>login works!</p>
+<mat-grid-list cols="2" rowHeight="1:1">
+    <mat-grid-tile>
+        <div class="signin-content">
+            <h1>Covid-19</h1>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div class="signin-content">
+            <mat-card class="sign-in-card mat-elevation-z8">
+              <mat-card-content>
+                  <h2>Login</h2>
+                <form [formGroup]="loginForm" (ngSubmit)="login()">
+                  <mat-form-field class="full-width-input">
+                    <input matInput placeholder="User" formControlName="username" required>
+                    <mat-error *ngIf="username.errors?.required">
+                      Please enter your user name
+                    </mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="full-width-input">
+                    <input matInput type="password" placeholder="Password" formControlName="password" required>
+                    <mat-error *ngIf="password.errors?.required">
+                        Please enter your password
+                      </mat-error>
+                  </mat-form-field>
+                  <button mat-raised-button class="btn-lgn" type="submit">Login</button>
+                </form>
+              </mat-card-content>
+            </mat-card>
+          </div> 
+    </mat-grid-tile>
+  </mat-grid-list>
