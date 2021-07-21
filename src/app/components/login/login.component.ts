@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit {
   constructor(private authService : AuthService) { }
 
   loginForm!: FormGroup;
+  validData : boolean = true;
+  isLoading : boolean = false;
 
   ngOnInit() {
     this.loginForm = new FormGroup({
@@ -28,7 +30,10 @@ export class LoginComponent implements OnInit {
 
   login() : void {
     if (this.loginForm.valid) {
-      this.authService.login(this.loginForm.value);
+      if(this.username?.value != 'fingent' || this.password?.value != 'fingent')
+          this.validData = false;
+      else
+        this.authService.login(this.loginForm.value);
     }
   }
 

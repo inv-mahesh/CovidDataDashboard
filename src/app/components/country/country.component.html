@@ -2,9 +2,39 @@
     <div class="text mat-typography"><h1>Countries</h1></div>
     <div class="line"><mat-divider></mat-divider></div>
   </div>
-        <mat-paginator [length]="countries.length" [pageSize]="pageSize" [pageIndex]="page" [pageSizeOptions]="[30]"
-    (page)="getData($event)">
-</mat-paginator>
+  <mat-card class="filter-card">
+      <mat-card-content>
+        <table width="100%">
+            <tr>
+                <td>
+                  <mat-form-field class="filter-full-width">
+                      <input matInput class="search-box" [(ngModel)]='searchText' placeholder="Search country">
+                      <button mat-icon-button class="search-button" (click)="openSearch()">
+                        <mat-icon>search</mat-icon>
+                    </button>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-form-field class="filter-full-width">
+                    <mat-label>Sort By</mat-label>
+                    <mat-select (selectionChange)="onSortChange($event)">
+                        <mat-option value="">Select a sort</mat-option>
+                        <mat-option value="country">Country</mat-option>
+                        <mat-option value="cases">Cases</mat-option>
+                        <mat-option value="deaths">Deaths</mat-option>
+                        <mat-option value="recovered">Recovered</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                </td>
+                <td>
+                  <mat-paginator [length]="countries?.length" [pageSize]="pageSize" [pageIndex]="page" [pageSizeOptions]="[30]"
+                  (page)="getData($event)">
+                  </mat-paginator>
+                </td>
+            </tr>
+        </table>
+      </mat-card-content>
+  </mat-card>
 <mat-grid-list cols="3" rowHeight="250px" gutterSize="15px">
     <mat-grid-tile *ngFor="let country of data">
         <mat-card class="my-card">
@@ -49,7 +79,7 @@
                         </mat-grid-tile>
                         <mat-grid-tile>
                             <div>
-                                <button mat-button class="menu-button" [routerLink]="'/country-edit'" >
+                                <button mat-button class="menu-button" (click)="gotoEdit(country)" >
                                     <mat-icon>edit</mat-icon>
                                 </button>
                             </div>

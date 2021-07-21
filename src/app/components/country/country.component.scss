@@ -41,3 +41,40 @@
   padding-right: 10px;
   padding-top: 10px;
 }
+
+.filter-card{
+  width: 90%;
+  height: 50px;
+  margin: 1em auto;    
+  padding: auto;
+  text-align: center;  
+}
+
+.td{
+  width: 33%;
+}
+
+.filter-full-width{
+  width: 90%;
+  text-align: center;
+}
+.search-box {
+  background-color: transparent;
+  outline: none;
+  height: 30px;
+  font-size: 15px;
+  border: 0;
+  width: 100%;
+}
+.search-button {
+  position: absolute;
+  right: 3px;
+  top: 3px;
+  background-color: rgb(20, 92, 247);
+  border-radius: 50%;
+  border: 0;
+  color: #FFF;
+  width: 30px;
+  height: 30px;
+  outline: 0;
+}

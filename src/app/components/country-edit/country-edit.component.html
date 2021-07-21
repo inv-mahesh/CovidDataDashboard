@@ -1,1 +1,56 @@
-<p>country-edit works!</p>
+<div class="container">
+    <div class="text mat-typography"><h1>Edit {{country}}</h1></div>
+    <div class="line"><mat-divider></mat-divider></div>
+  </div>
+
+  <mat-card class="mat-elevation-z8">
+    <mat-card-content>  
+        <form [formGroup]="editForm" (ngSubmit)="updateCountry()">
+            <table width="100%">
+                <tr>
+                    <td width="50%">    
+                        <mat-form-field class="edit-full-width">    
+                            <input matInput formControlName="cases" placeholder="Cases" type="number" min="0"> 
+                            <mat-error *ngIf="cases.errors?.required">
+                                Please enter a value
+                            </mat-error>  
+                        </mat-form-field>    
+                    </td>    
+                    <td width="50%">    
+                        <mat-form-field class="edit-full-width">    
+                            <input matInput formControlName="tests" placeholder="Tests" type="number" min="0">  
+                            <mat-error *ngIf="tests.errors?.required">
+                                Please enter a value
+                            </mat-error>   
+                        </mat-form-field>    
+                    </td>   
+                </tr>
+                <tr>
+                    <td>    
+                        <mat-form-field class="edit-full-width">    
+                            <input matInput formControlName="deaths" placeholder="Deaths" type="number" min="0"        >  
+                            <mat-error *ngIf="deaths.errors?.required">
+                                Please enter a value
+                            </mat-error>   
+                        </mat-form-field>    
+                    </td>    
+                    <td>    
+                        <mat-form-field class="edit-full-width">    
+                            <input matInput formControlName="recovered" placeholder="Recovered" type="number" min="0"> 
+                            <mat-error *ngIf="recovered.errors?.required">
+                                Please enter a value
+                            </mat-error>    
+                        </mat-form-field>    
+                    </td>   
+                </tr>
+                <tr>    
+                    <td></td>
+                    <td class="content-center">    
+                        <button mat-raised-button type="reset" (click)="cancel()" class="btn-cncl">Cancel</button>    
+                        <button mat-raised-button type="submit" class="btn-lgn">Submit</button>    
+                    </td>    
+                </tr>   
+            </table>
+        </form> 
+    </mat-card-content>
+  </mat-card>

@@ -8,7 +8,7 @@
       <mat-card class="my-card">
           <div class="my-content">
             <p>Total Cases</p><br>
-          <p>{{case.cases}}</p>
+          <p><b>{{case.cases}}</b></p>
           </div>
        <!-- </mat-card-content> -->
       </mat-card> 
@@ -17,7 +17,7 @@
       <mat-card class="my-card">
         <div class="my-content">
           <p>Total Deaths</p><br>
-          <p>{{case.deaths}}</p>
+          <p><b>{{case.deaths}}</b></p>
         </div>
       </mat-card> 
     </mat-grid-tile>
@@ -25,7 +25,7 @@
       <mat-card class="my-card">
         <div class="my-content">
           <p>Total Recovered</p><br>
-          <p>{{case.recovered}}</p>
+          <p><b>{{case.recovered}}</b></p>
         </div>
       </mat-card> 
     </mat-grid-tile>
@@ -39,7 +39,7 @@
     <mat-card class="my-card">
       <div class="my-content">
          <p>Cases</p><br>
-         <p>{{case.todayCases}}</p>
+         <p><b>{{case.todayCases}}</b></p>
       </div>>
     </mat-card> 
   </mat-grid-tile>
@@ -47,7 +47,7 @@
     <mat-card class="my-card">
       <div class="my-content">
         <p>Deaths</p><br>
-        <p>{{case.todayDeaths}}</p>
+        <p><b>{{case.todayDeaths}}</b></p>
      </div>
     </mat-card> 
   </mat-grid-tile>
@@ -55,10 +55,17 @@
     <mat-card class="my-card">
       <div class="my-content">
         <p>Recovered</p><br>
-        <p>{{case.todayRecovered}}</p>
+        <p><b>{{case.todayRecovered}}</b></p>
       </div>
     </mat-card> 
   </mat-grid-tile>
 </mat-grid-list> 
-
+</div>
+<div *ngIf="isLoading" class="overlay">
+  <div class="center">
+    <mat-progress-spinner diameter=50
+                        mode="indeterminate"
+              color="accent">
+  </mat-progress-spinner> 
+  </div>
 </div>

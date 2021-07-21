@@ -11,7 +11,7 @@ const routes: Routes = [
     children:[
         {path:'dashboard',component : DashboardComponent },
         {path:'countries',component : CountryComponent},
-        {path:'country-edit',component : CountryEditComponent}
+        {path:'country-edit/:country',component : CountryEditComponent}
     ]},
     { path: '**', redirectTo: '/not-found' }
 ];

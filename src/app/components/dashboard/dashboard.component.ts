@@ -10,21 +10,21 @@ import { ApiService } from 'src/app/service/api.service';
 export class DashboardComponent implements OnInit {
 
   case: any;
+  isLoading : boolean = false;
 
   constructor(private apiService : ApiService) { }
   
   ngOnInit(): void {
-    console.log("dashboard component initialized")
     this.getDashboardData();
   }
 
   getDashboardData() : void{
+    this.isLoading = true;
     this.apiService.getDashboardData().subscribe((data : any)=>{
-      console.log("data",data)
       this.case = data;
-      console.log("cases",this.case)
+      this.isLoading = false;
     },error =>{
-
+      this.isLoading = false;
     })
   }
 

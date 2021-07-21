@@ -1,5 +1,5 @@
 export interface Country {
-        name: string;
+    name: string;
     flag: string;
     case: number;
     deaths: number;
@@ -8,3 +8,6 @@ export interface Country {
     population: number;
 }
 
+export interface CountryList extends Array<Country>{
+    
+}

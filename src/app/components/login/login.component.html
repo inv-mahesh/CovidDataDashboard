@@ -22,10 +22,15 @@
                         Please enter your password
                       </mat-error>
                   </mat-form-field>
-                  <button mat-raised-button class="btn-lgn" type="submit">Login</button>
+                  <button mat-raised-button class="btn-lgn" [disabled]="loginForm.invalid" type="submit">Login</button>
+                  <mat-error *ngIf="!validData">
+                    Invalid username or password
+                  </mat-error>
                 </form>
               </mat-card-content>
             </mat-card>
           </div> 
+          <mat-progress-spinner *ngIf="isLoading">
+          </mat-progress-spinner>
     </mat-grid-tile>
   </mat-grid-list>

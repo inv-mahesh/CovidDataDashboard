@@ -8,6 +8,11 @@ export class AuthService {
   private loggedIn: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
 
   get isLoggedIn() {
+    // return this.loggedIn.asObservable();
+    if(localStorage.getItem('loginStatus'))
+      this.loggedIn.next(true);
+    else
+        this.loggedIn.next(false);
     return this.loggedIn.asObservable();
   }
 
@@ -16,9 +21,8 @@ export class AuthService {
   ) {}
 
   login(user: User) {
-      console.log("angular login",user.username)
     if (user.username == 'fingent' && user.password == 'fingent' ) {
-      this.loggedIn.next(true);
+      localStorage.setItem('loginStatus','loggedIn')
       this.router.navigate(['dashboard']);
     }else{
         this.loggedIn.next(false);
@@ -26,7 +30,7 @@ export class AuthService {
   }
 
   logout() {
-    this.loggedIn.next(false);
+    localStorage.removeItem('loginStatus')
     this.router.navigate(['']);
   }
 }
