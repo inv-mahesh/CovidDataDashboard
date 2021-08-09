@@ -30,7 +30,7 @@ export class LoginComponent implements OnInit {
 
   login() : void {
     if (this.loginForm.valid) {
-      if(this.username?.value != 'fingent' || this.password?.value != 'fingent')
+      if(this.username?.value != 'covid' || this.password?.value != 'covid')
           this.validData = false;
       else
         this.authService.login(this.loginForm.value);
